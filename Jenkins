@@ -1,0 +1,10 @@
+pipeline {
+  agent any
+  stage {
+    stage('Submit Stack') {
+      steps {
+        sh "aws cloudformation --region ap-southeast-1 update-stack --stack-name STACK_NAME --template-body file ....."
+      }
+    }
+  }
+}
